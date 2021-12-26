@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  mysql:
+    image: mariadb:10.7
+    volumes:
+      - ./docker/mysql/volumes/data:/var/lib/mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_ROOT_PASSWORD: ''
+    command:
+      - mysqld
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_bin
+
+  app:
+    build:
+      context: .
+    ports:
+      - 58000:8000
+    volumes:
+      - ./:/app:cached
+    depends_on:
+      - mysql
+    command: ["./scripts/wait-for-db.sh", "mysql", "bin/rails", "server", "-b", "0.0.0.0", "-p", "8000"]
