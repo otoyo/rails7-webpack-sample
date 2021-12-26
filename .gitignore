@@ -28,3 +28,6 @@
 !/app/assets/builds/.keep
 
 /node_modules
+
+# Docker mysql volumes
+docker/mysql/volumes/
