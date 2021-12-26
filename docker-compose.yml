@@ -22,4 +22,4 @@ services:
       - ./:/app:cached
     depends_on:
       - mysql
-    command: ["./scripts/wait-for-db.sh", "mysql", "bin/rails", "server", "-b", "0.0.0.0", "-p", "8000"]
+    command: ["./scripts/wait-for-db.sh", "mysql", "bin/dev"]
