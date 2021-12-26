@@ -13,8 +13,10 @@ default: &default
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password:
+  username: <%= ENV.fetch("DB_USER") { "root" } %>
+  password: <%= ENV.fetch("DB_PASSWORD") { "" } %>
+  host: <%= ENV.fetch("DB_HOST") { "mysql" } %>
+  port: <%= ENV.fetch("DB_PORT") { "3306" } %>
   socket: /tmp/mysql.sock
 
 development:
@@ -50,6 +52,4 @@ test:
 #
 production:
   <<: *default
-  database: rails7_webpack_sample_production
-  username: rails7_webpack_sample
-  password: <%= ENV["RAILS7_WEBPACK_SAMPLE_DATABASE_PASSWORD"] %>
+  database: rails7_webpack_sample
