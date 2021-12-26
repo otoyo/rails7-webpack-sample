@@ -1,24 +1,17 @@
-# README
+# rails7-webpack-sample
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails 7 with webpack sample.
 
-Things you may want to cover:
+### Requirements
 
-* Ruby version
+- Ruby 3.0.3
+- Ruby on Rails 7.0.0
+- Docker Desktop
 
-* System dependencies
+### Getting started
 
-* Configuration
+```sh
+% docker compose up
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Open http://localhost:58000 in the browser.
