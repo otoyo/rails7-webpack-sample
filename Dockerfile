@@ -22,6 +22,7 @@ ENV BUNDLE_PATH vendor/bundle
 # https://github.com/brianmario/mysql2#linux-and-other-unixes
 RUN apt-get update -y && apt-get install -y \
     build-essential \
+    vim \
     pkg-config libxml2-dev libxslt-dev \
     libmariadb-dev default-mysql-client
 
